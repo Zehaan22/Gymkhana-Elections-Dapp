@@ -5,24 +5,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elections</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <h1>Welcome to the Gymkhana elections.</h1>
     <div class = "login-user">
-        <h1>Log - In</h1>
-        <form action="login" id="log-in-form" class = 'loginform'>
+        <h3>Contestants:</h3>
+        <p>1. Alice
+            <br>
+           2. Bob
+           <br>
+           3. Cameron
+           <br>
+        </p>
+        <form  id="log-in-form" class = 'loginform'>
             <ul class = "id-input">
                 <p>Enter your id:</p>
-                <input type="text" class="inputbox">
+                <input type="text" class="inputbox" id = "user-id">
+            </ul>
+            <ul class = "firstpref-input">
+                <p>Enter your First Pref:</p>
+                <input type="text" class="inputbox" id = "user-firstpref">
+            </ul>
+            <ul class = "secondpref-input">
+                <p>Enter your Second Pref:</p>
+                <input type="text" class="inputbox" id = "user-secondpref">
+            </ul>
+            <ul class = "thirdpref-input">
+                <p>Enter your Third Pref:</p>
+                <input type="text" class="inputbox" id = "user-thirdpref">
             </ul>
             <ul class = "password-input">
                 <p>Enter your password:</p>
-                <input type="text" class="inputbox">
+                <input type="password" class="inputbox" id = "user-password">
             </ul>
             <ul>
-                <input type="submit" name="login-sub" id="login-sub">
+                <input type="submit" name="login-sub" id="login-sub" onclick="login()" >
             </ul>
         </form>
     </div>
+    <div class = 'Vote-box' id = "Vote-box">
+
+
+    </div>
+    <script src="index.js"></script>
 </body>
+
 </html>
