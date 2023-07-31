@@ -31,7 +31,7 @@ contract Election {
         voters[voter].is_reg=true;
     }
 
-    function castVote(uint256 pref1, uint256 pref2, uint256 pref3) external {
+    function Vote(uint256 pref1, uint256 pref2, uint256 pref3) external {
         Voter storage voter = voters[msg.sender];
         require(voter.is_reg, "Voter is not registered.");
         require(!voter.has_voted, "Already voted.");
@@ -41,8 +41,20 @@ contract Election {
         voter.has_voted=true;
     }
 
-    function currentStanding() public view returns (Candidate[] memory _candidates) {
-        return candidates;
-    }   
+    function winningCandidate()
+        public
+        view
+        returns (uint256 winningCandidate_)
+    {
+        uint256 maxVotes = 0;
+        uint256 winner = 0;
+        for (uint256 i = 0; i < candidates.length; i++) {
+            if (candidates[i].score >= maxVotes) {
+                winner = i;
+                maxVotes = candidates[i].score;
+            }
+        }
+        return winner;
+    }  
 
 }
